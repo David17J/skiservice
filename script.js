@@ -20,6 +20,13 @@ function calculatePickupDate() {
     document.getElementById("pickupDate").value = pickupDate.toLocaleDateString('de-DE', options);
 }
 
+function validate(){
+    let valid = validateForm();
+    console.log("valid="+valid);
+    if(valid){
+        register();
+    }
+}
 // Funktion zur Formularvalidierung
 function validateForm() {
     // Vorname und Name
@@ -57,7 +64,7 @@ function validateForm() {
         isValid = false;
         errorMessage += "Die E-Mail-Adresse ist ungültig.\n";
         email.setAttribute("style","border-color: red");
-        emailMessage.set("text", errorMessage);
+       // emailMessage.set("text", errorMessage);
     }
 
     // Auswahl des Angebots
@@ -91,7 +98,7 @@ function sendInformation() {
 }
 
 
-function register(form){
+function register(form2){
     const url="http://localhost:5000/api/registration"
     let form={
         id: 0,

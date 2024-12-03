@@ -11,7 +11,6 @@
 </head>
 <body>
     <main>
-        
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <!-- Logo und Titel -->
@@ -43,7 +42,7 @@
   </main>
     <main class="container py-5">
         <h1 class="text-center mb-4">Anmeldung</h1>
-        <form id="contactForm" class="p-4 rounded shadow" onsubmit="return validateForm()">
+        <form id="contactForm" class="p-4 rounded shadow">
             <fieldset>
                 <legend class="text-center fw-bold mb-4">Anmeldungsformular</legend>
         
@@ -126,8 +125,9 @@
         
                 <!-- Submit Button -->
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Absenden</button>
+                    <input type="submit" onclick="validateForm()" class="btn btn-primary"/>
                 </div>
             </fieldset>
         </form>
-        
+    </main>
+</body>
