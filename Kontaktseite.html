@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        
+        <<nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <!-- Logo und Titel -->
+              <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="Jetstream_icon.png" alt="Logo" class="me-2" style="width: 40px; height: 40px;">
+                <span>Jetstream</span>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="dienstleistungen.html">Dienstleistungen</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Kontaktseite.html">Kontakt</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+  </main>
+    <main class="container py-5">
+        <h1 class="text-center mb-4">Kontakt</h1>
+        <form id="contactForm" class="p-4 rounded shadow" onsubmit="return validateForm()">
+            <fieldset>
+                <legend class="text-center fw-bold mb-4">Kontaktformular</legend>
+                
+                <!-- Vorname -->
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Vorname</label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        class="form-control"
+                        placeholder="Max"
+                        required
+                    />
+                </div>
+                
+                <!-- Nachname -->
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Nachname</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        class="form-control"
+                        placeholder="Mustermann"
+                        required
+                    />
+                </div>
+
+                <!-- E-Mail -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="max.mustermann@example.com"
+                        required
+                    />
+                </div>
+
+                <!-- Telefonnummer -->
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Telefon (optional)</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="form-control"
+                        placeholder="0123 456789"
+                    />
+                </div>
+
+                <!-- Nachricht -->
+                <div class="mb-3">
+                    <label for="message" class="form-label">Nachricht</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        class="form-control"
+                        rows="5"
+                        placeholder="Ihre Nachricht..."
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Absenden -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Absenden</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Validation Script -->
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (!email || !message) {
+                alert("Bitte füllen Sie alle Pflichtfelder aus.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
