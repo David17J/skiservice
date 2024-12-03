@@ -16,17 +16,19 @@ function calculatePickupDate() {
     }
 
     // Datum im Format DD.MM.YYYY anzeigen
-    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const options = {day: '2-digit', month: '2-digit', year: 'numeric'};
     document.getElementById("pickupDate").value = pickupDate.toLocaleDateString('de-DE', options);
 }
 
-function validate(){
+function sendInformation() {
     let valid = validateForm();
-    console.log("valid="+valid);
-    if(valid){
+    console.log("valid=" + valid);
+    if (valid) {
+        console.log("valid=" + valid);
         register();
     }
 }
+
 // Funktion zur Formularvalidierung
 function validateForm() {
     // Vorname und Name
@@ -59,12 +61,12 @@ function validateForm() {
     }
 
     // E-Mail Validierung
-    email.setAttribute("style","border-color: grey");
+    email.setAttribute("style", "border-color: grey");
     if (!email.value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
         isValid = false;
         errorMessage += "Die E-Mail-Adresse ist ungültig.\n";
-        email.setAttribute("style","border-color: red");
-       // emailMessage.set("text", errorMessage);
+        email.setAttribute("style", "border-color: red");
+        // emailMessage.set("text", errorMessage);
     }
 
     // Auswahl des Angebots
@@ -86,44 +88,50 @@ function validateForm() {
     }
 
     // Fehlernachricht anzeigen, wenn Formular ungültig ist
-
     return isValid;  // Gibt true zurück, wenn alle Validierungen bestanden sind, sonst false
 }
 
-// Funktion zum Absenden der Formulardaten (nur wenn validiert)
-function sendInformation() {
-    if (validateForm()) {
-        console.log("Formulardaten werden gesendet..."); // Hier kannst du die Logik zum Senden der Daten hinzufügen
+function register(form2) {
+    const url = "http://localhost:5000/api/registration"
+    const email = document.getElementById("email").value;
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const phone = document.getElementById("phone").value;
+    const offer = document.getElementById("offer").value;
+    const priority = document.getElementById("priority").value;
+    const pickupDate = document.getElementById("pickupDate").value;
+    const response = document.getElementById("response");
+
+    let form = {
+        name: firstName + " " + lastName,
+        email: email,
+        phone: phone,
+        priority: priority,
+        service: offer,
+        pickup_date: pickupDate
     }
-}
-
-
-function register(form2){
-    const url="http://localhost:5000/api/registration"
-    let form={
-        id: 0,
-        name: "string",
-        email: "string",
-        phone: "string",
-        priority: "string",
-        service: "string",
-        create_date: "string",
-        pickup_date: "string"
-      }
-      let fetchData = {
+    let fetchData = {
         method: "POST",
         body: form,
-      };
+    };
+    console.log("form" + JSON.stringify(form));
 
-      fetch(url, fetchData)
-      .then(function (data) {
-        console.log("Registration successful="+data);
-        // Das Promise ist resolve -> Empfangene Daten abarbeiten
-      })
-      .catch(function (err) {
-        console.log("Err="+err);
-        // Das Promise is reject -> Fehler behandeln
-      });
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(form),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then(function (data) {
+            console.log("Registration successful=" + JSON.stringify(data));
+            alert("Registration succeed " + JSON.stringify(data))
+            // Das Promise ist resolve -> Empfangene Daten abarbeiten
+        })
+        .catch(function (err) {
+            console.log("Err=" + err);
+            // Das Promise is reject -> Fehler behandeln
+        });
 
 
 }
