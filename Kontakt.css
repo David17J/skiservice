@@ -1,0 +1,42 @@
+/* Kontaktbereich */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contact-content .text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact-content .image {
+    flex: 1;
+    max-width: 50%;
+}
+
+/* Bild-Styles */
+.contact-content .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-content .image {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .contact-content .text {
+        padding-right: 0;
+    }
+}

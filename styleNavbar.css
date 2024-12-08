@@ -1,0 +1,52 @@
+/* Setzt den Hintergrund der gesamten Seite auf ein leichtes Grau */
+body {
+    background-color: #f4f4f4; /* Helles Grau */
+    color: #333; /* Dunkler Text für besseren Kontrast */
+    font-family: Arial, sans-serif; /* Schriftart für die Seite */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar-Stile */
+.navbar {
+    background-color: #343a40; /* Dunkelgrau für die Navbar-Hintergrundfarbe */
+}
+
+.navbar-brand {
+    color: Black; /* Weiß für den Logo-Text */
+}
+
+.navbar-brand:hover {
+    color: Black; /* Helles Grau beim Hover über den Logo-Text */
+}
+
+.nav-link {
+    color: black; /* Weiß für die Links (Home, Dienstleistungen, Kontakt, Über uns) */
+}
+
+.nav-link:hover {
+    color: #1683ef; /* Helles Grau beim Hover über die Links */
+}
+
+.nav-link.active {
+    color: #007bff; /* Blau für den aktiven Link */
+}
+
+
+.navbar-toggler {
+    border-color: #ffffff; /* Weißer Rahmen für den Toggler */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Weiße Toggler-Icon */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .navbar {
+        background-color: #495057; /* Etwas helleres Grau für mobile Ansicht */
+    }
+}
+
+
+   
