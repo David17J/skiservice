@@ -6,39 +6,71 @@
     <title>Kontakt</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"  href="styleNavbar.css">
+    <link rel="stylesheet" href="Kontakt.css">
 </head>
 <body>
     <main>
         
-        <<nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <!-- Logo und Titel -->
-              <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="Jetstream_icon.png" alt="Logo" class="me-2" style="width: 40px; height: 40px;">
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <!-- Logo und Titel -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="Bilder/Jetstream_icon.png" alt="Logo" class="me-2" style="width: 40px; height: 40px;">
                 <span>Jetstream</span>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="dienstleistungen.html">Dienstleistungen</a>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Kontaktseite.html">Kontakt</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Dienstleistungen.html">Dienstleistungen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Kontaktseite.html">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ueberuns.html">Über uns</a>
+                    </li>
                 </ul>
-              </div>
             </div>
-          </nav>
+        </div>
+    </nav>
   </main>
+
+  <!-- Kontaktbereich -->
+  <section class="contact-section mx-5 my-5">
+    <div class="contact-header text-center">
+        <h2>Ihr Kontakt zu Jetstream-Service</h2>
+        <p>Wir sind immer für Sie da</p>
+    </div>
+
+    <div class="contact-content d-flex justify-content-between align-items-center">
+        <div class="text">
+            <p>Haben Sie eine Frage oder möchten Sie detaillierte Informationen zu unseren Angeboten und Services erhalten? Wir freuen uns auf Ihre Anfrage und stehen Ihnen gerne persönlich zur Verfügung. Nutzen Sie einfach das Kontaktformular auf dieser Seite oder schreiben Sie uns eine E-Mail an <a href="mailto:kontakt@jetstream-service.ch">kontakt@jetstream-service.ch</a>. Wir leiten Ihre Nachricht an die zuständige Person weiter, die sich umgehend mit Ihnen in Verbindung setzt.</p>
+            <p>Oder kommen Sie einfach in einem unserer Shops vorbei! Hier finden Sie alle Adressen und Öffnungszeiten unserer Shops in der Region.</p>
+        </div>
+        <div class="image">
+            <img src="Bilder/KontaktHilfe.jpg" alt="Kontaktbild" class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="contact-header text-center mt-5">
+        <h2>Kontaktformular</h2>
+        <p>... für Fragen, Wünsche oder Anregungen</p>
+    </div>
+
+    <div class="contact-info text-center">
+        <p>Wählen Sie den Shop oder die Filiale aus, die für Ihre Anfrage relevant ist, und nehmen Sie Kontakt mit uns auf. Natürlich können Sie uns auch allgemeine Fragen stellen. Wir sind für alles offen und helfen Ihnen gerne weiter.</p>
+    </div>
+</section>
+
+
     <main class="container py-5">
         <h1 class="text-center mb-4">Kontakt</h1>
         <form id="contactForm" class="p-4 rounded shadow" onsubmit="return validateForm()">
